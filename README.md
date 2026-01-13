@@ -150,3 +150,20 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 Analysis: While steady playoff appearances signal success, earning the **No. 1 seed** represents true regular-season superiority. The data reveals a clear separation between frequent playoff teams and those that consistently lead their conferences. The **Patriots** established the standard with seven top-seed finishes, followed by the **Eagles** with five. Notably, despite the Patriots and Packers being tied in total playoff appearances, the Patriots demonstrated a far higher level of dominance by securing more than twice as many No. 1 seeds.
+
+### Which Teams Dominated Each Era of the NFL
+Let's take a look at which teams dominated each 5-year period. We will take a look at which teams finished 1st or 2nd in their conference.
+```Python
+# Categorise seasons into 5-year buckets (Eras)
+df['era'] = (df['season'] // 5) * 5
+
+# Identify teams securing top-two seeds (1 or 2) per era
+era_analysis = df[df['seed'] <= 2].groupby(['era', 'team']).size().reset_index(name='top_seed_count')
+
+# Extract top 3 dominant franchises for each 5-year cycle
+era_analysis = era_analysis.sort_values(['era', 'top_seed_count'], ascending=[True, False]).groupby('era').head(3)
+
+print("Dominant Teams (Seed 1 or 2) by Era:")
+display(era_analysis)
+```
+Analysis: Examining the data in five-year intervals highlights how sustained NFL success often stems from strong organizational foundations that support long-term competitiveness. The **Patriots** cemented their elite status by securing a top-two seed across three consecutive periods (2000–2015) and claiming the #2 seed again in 2025. In contrast, the 2020s have been shaped by a "New Guard," led by the **Bills** and **Chiefs**. Overall, the data shows that top franchises consistently discover and maintain a “winning formula,” allowing them to remain contenders year after year.
