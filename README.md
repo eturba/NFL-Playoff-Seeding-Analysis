@@ -151,7 +151,7 @@ plt.show()
 ```
 Analysis: While steady playoff appearances signal success, earning the **No. 1 seed** represents true regular-season superiority. The data reveals a clear separation between frequent playoff teams and those that consistently lead their conferences. The **Patriots** established the standard with seven top-seed finishes, followed by the **Eagles** with five. Notably, despite the Patriots and Packers being tied in total playoff appearances, the Patriots demonstrated a far higher level of dominance by securing more than twice as many No. 1 seeds.
 
-### Which Teams Dominated Each Era of the NFL
+### 🕰️ Which Teams Dominated Each Era of the NFL
 Let's take a look at which teams dominated each 5-year period. We will take a look at which teams finished 1st or 2nd in their conference.
 ```Python
 # Categorise seasons into 5-year buckets (Eras)
